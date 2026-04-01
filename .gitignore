@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+build/
+dist/
+*.egg-info/
+
+# Environment / Secrets
+.env
+
+# Celery
+celerybeat-schedule*
+
+# Database / Docker
+data/
+*.log
+
+# IDEs
+.vscode/
+.idea/
+.project
+.pydevproject
+.settings/
+.gemini/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+# FastAPI core
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Database (async SQLAlchemy + MySQL driver)
+sqlalchemy==2.0.36
+pymysql==1.1.1
+alembic==1.14.0
+
+# Celery + Redis broker
+celery==5.4.0
+redis==5.2.1
+
+# HTTP client for NewsAPI
+httpx==0.28.1
+
+# Settings management
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+
+# Utilities
+tenacity==9.0.0
+
+# UI – template rendering + static files
+jinja2==3.1.5
+aiofiles==24.1.0
+python-multipart==0.0.20
