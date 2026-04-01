@@ -1,13 +1,3 @@
-"""
-app/celery_app/tasks.py
-
-Celery tasks for the Jarvis Invest project.
-
-fetch_news_task runs every 60 seconds (via celery beat):
-  1. Calls the async fetch_top_headlines() via asyncio.run().
-  2. Opens a sync DB session and persists new articles.
-"""
-
 import asyncio
 import logging
 

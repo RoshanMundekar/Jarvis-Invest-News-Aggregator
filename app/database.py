@@ -1,9 +1,3 @@
-"""
-app/database.py
-Synchronous SQLAlchemy engine, session factory, and DB initialisation helper.
-Uses pymysql driver — compatible with DATABASE_URL=mysql+pymysql://...
-"""
-
 import logging
 
 from sqlalchemy import create_engine, text

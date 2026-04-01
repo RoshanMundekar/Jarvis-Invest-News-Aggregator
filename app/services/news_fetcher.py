@@ -1,14 +1,3 @@
-"""
-app/services/news_fetcher.py
-
-Responsibilities
-----------------
-1. Call the NewsAPI /top-headlines endpoint (async via httpx).
-2. Parse the response into a list of dicts.
-3. Persist new articles to MySQL (sync SQLAlchemy + pymysql).
-   Duplicate URLs are skipped via INSERT IGNORE.
-"""
-
 import logging
 from datetime import datetime
 from typing import Any
@@ -38,17 +27,7 @@ class NewsAPIKeyMissing(NewsAPIError):
 # Fetch  (async – httpx)
 # ---------------------------------------------------------------------------
 async def fetch_top_headlines(date_str: str | None = None) -> list[dict[str, Any]]:
-    """
-    Call the NewsAPI /top-headlines endpoint and return a list of raw
-    article dicts. If date_str (YYYY-MM-DD) is provided, fetches historical news for that date.
-
-    Raises
-    ------
-    NewsAPIKeyMissing
-        When the API key is not set in the environment.
-    NewsAPIError
-        On any HTTP error or unexpected API response.
-    """
+   
     if not settings.news_api_key:
         logger.error("NEWS_API_KEY is not configured – cannot fetch news.")
         raise NewsAPIKeyMissing(
@@ -112,22 +91,7 @@ def save_articles_to_db(
     articles: list[dict[str, Any]],
     db: Session,
 ) -> int:
-    """
-    Bulk-insert articles into the news_articles table.
-    Articles whose URL already exists in the DB are silently skipped.
-
-    Parameters
-    ----------
-    articles:
-        List of raw article dicts from NewsAPI.
-    db:
-        An active SQLAlchemy Session (sync).
-
-    Returns
-    -------
-    int
-        Number of new rows actually inserted.
-    """
+    
     if not articles:
         logger.warning("save_articles_to_db called with an empty list – nothing to do.")
         return 0

@@ -1,8 +1,3 @@
-"""
-app/schemas.py
-Pydantic schemas for request/response validation and serialisation.
-"""
-
 from datetime import datetime
 from typing import Any
 

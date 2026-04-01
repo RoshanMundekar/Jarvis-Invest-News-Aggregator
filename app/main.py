@@ -1,17 +1,3 @@
-"""
-app/main.py
-
-FastAPI application entry-point.
-
-Components assembled here
--------------------------
-1. TimingMiddleware  – measures request duration and injects
-                       `total_time_taken` (ms) into every JSON response.
-2. Lifespan handler  – initialises the database on startup.
-3. API router        – mounts /news endpoints.
-4. Static files & Jinja2 templates for the dashboard UI.
-"""
-
 import json
 import logging
 import time

@@ -1,8 +1,3 @@
-"""
-app/config.py
-Application settings loaded from environment variables / .env file.
-"""
-
 import logging
 from functools import lru_cache
 

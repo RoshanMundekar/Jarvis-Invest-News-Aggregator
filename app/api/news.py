@@ -1,16 +1,3 @@
-"""
-app/api/news.py
-
-API router for news-related endpoints.
-
-Endpoint
---------
-GET /news?date=YYYY-MM-DD
-    Returns all news articles stored in the database for the given date.
-    The `total_time_taken` field is injected into the response body by
-    TimingMiddleware (see app/main.py) – it is not computed here.
-"""
-
 import logging
 from datetime import date, datetime
 

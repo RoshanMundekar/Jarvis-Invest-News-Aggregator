@@ -1,12 +1,3 @@
-"""
-app/celery_app/worker.py
-
-Creates the Celery application instance and configures:
-  - Broker  : Redis
-  - Backend : Redis (for task result storage)
-  - Beat schedule : run fetch_news_task every 60 seconds
-"""
-
 import logging
 
 from celery import Celery

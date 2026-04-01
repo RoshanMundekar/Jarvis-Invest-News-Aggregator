@@ -2,6 +2,13 @@
 
 A professional, real-time news terminal and aggregator powered by **FastAPI**, **MySQL**, **Celery**, and **NewsAPI**.
 
+---
+
+## Demo Video
+Watch here:https://drive.google.com/file/d/150uYGK_phbHnZ6Xs-FlDvf5RzmqMn7W_/view?usp=sharing
+
+---
+
 ## 🚀 Overview
 
 Jarvis Invest is a full-stack news dashboard designed for financial and technology monitoring. It automatically aggregates global headlines into a persistent local database, providing a high-performance interface for both real-time discovery and historical archive exploration.
@@ -59,6 +66,10 @@ pip install -r requirements.txt
 **Start the Web Server:**
 ```bash
 uvicorn app.main:app --reload
+
+OR
+
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 **Start the Celery Worker (Separately):**
